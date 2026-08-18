@@ -6,6 +6,7 @@ import {
   Server,
   Wrench,
 } from "lucide-react";
+import ScrollReveal from "../components/ScrollReveal";
 
 const skills = [
   {
@@ -58,29 +59,32 @@ const Skills = () => {
 
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
-        <div className="mb-16 max-w-2xl">
-          <p className="mb-3 font-mono text-sm font-medium tracking-wide text-[#17C964]">
-            <span className="text-slate-500">{"//"}</span> skills
-          </p>
+        <ScrollReveal delay={80}>
+          <div className="mb-16 max-w-2xl">
+            <p className="mb-3 font-mono text-sm font-medium tracking-wide text-[#17C964]">
+              <span className="text-slate-500">{"//"}</span> skills
+            </p>
 
-          <h2 className="font-[Space_Grotesk,sans-serif] text-3xl font-bold tracking-tight text-white md:text-4xl">
-            Technologies I work with
-          </h2>
+            <h2 className="font-[Space_Grotesk,sans-serif] text-3xl font-bold tracking-tight text-white md:text-4xl">
+              Technologies I work with
+            </h2>
 
-          <p className="mt-4 max-w-xl text-slate-400">
-            A collection of technologies and tools I use to build modern web
-            applications.
-          </p>
-        </div>
+            <p className="mt-4 max-w-xl text-slate-400">
+              A collection of technologies and tools I use to build modern web
+              applications.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Skills grid — equal-sized cards */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr">
-          {skills.map((skill) => {
+          {skills.map((skill, index) => {
             const Icon = skill.icon;
 
             return (
-              <div
+              <ScrollReveal
                 key={skill.title}
+                delay={150 + index * 60}
                 className="group flex h-full min-h-[220px] flex-col rounded-2xl border border-white/10 bg-[#12141C] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#17C964]/40"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#17C964]/10 text-[#17C964] transition group-hover:bg-[#17C964] group-hover:text-[#0B0D12]">
@@ -101,7 +105,7 @@ const Skills = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

@@ -3,6 +3,7 @@ import worldExplorerImage from "../assets/world-explorer.png";
 import movieWatchlistImage from "../assets/movie-watchlist.png";
 import zamluxImage from "../assets/zamlux.png";
 import { ExternalLink, GitBranch } from "lucide-react";
+import ScrollReveal from "../components/ScrollReveal";
 
 const featuredProject = {
   title: "KaarYab Afghanistan",
@@ -60,23 +61,25 @@ const Projects = () => {
 
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
-        <div className="mb-16 max-w-2xl">
-          <p className="mb-3 font-mono text-sm font-medium tracking-wide text-[#17C964]">
-            <span className="text-slate-500">{"//"}</span> projects
-          </p>
+        <ScrollReveal delay={80}>
+          <div className="mb-16 max-w-2xl">
+            <p className="mb-3 font-mono text-sm font-medium tracking-wide text-[#17C964]">
+              <span className="text-slate-500">{"//"}</span> projects
+            </p>
 
-          <h2 className="font-[Space_Grotesk,sans-serif] text-3xl font-bold tracking-tight text-white md:text-4xl">
-            Some things I&rsquo;ve built
-          </h2>
+            <h2 className="font-[Space_Grotesk,sans-serif] text-3xl font-bold tracking-tight text-white md:text-4xl">
+              Some things I&rsquo;ve built
+            </h2>
 
-          <p className="mt-4 max-w-xl text-slate-400">
-            A selection of projects that showcase my experience with modern
-            frontend technologies and web development.
-          </p>
-        </div>
+            <p className="mt-4 max-w-xl text-slate-400">
+              A selection of projects that showcase my experience with modern
+              frontend technologies and web development.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Featured project */}
-        <article className="mb-8 overflow-hidden rounded-3xl border border-[#17C964]/25 bg-[#12141C] p-6 md:p-10">
+        <ScrollReveal delay={150} className="mb-8 overflow-hidden rounded-3xl border border-[#17C964]/25 bg-[#12141C] p-6 md:p-10">
           <div className="grid items-center gap-10 md:grid-cols-2">
             {/* Blob-shaped image that resolves into focus on hover */}
             <div className="group relative mx-auto w-full max-w-md">
@@ -141,13 +144,14 @@ const Projects = () => {
               </div>
             </div>
           </div>
-        </article>
+        </ScrollReveal>
 
         {/* Secondary projects */}
         <div className="grid gap-8 md:grid-cols-3">
-          {projects.map((project) => (
-            <article
+          {projects.map((project, index) => (
+            <ScrollReveal
               key={project.title}
+              delay={200 + index * 80}
               className="group overflow-hidden rounded-2xl border border-white/10 bg-[#12141C] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#17C964]/40"
             >
               {/* Notched-corner image with an offset accent frame */}
@@ -207,7 +211,7 @@ const Projects = () => {
                   <GitBranch size={14} />
                 </a>
               </div>
-            </article>
+            </ScrollReveal>
           ))}
         </div>
       </div>

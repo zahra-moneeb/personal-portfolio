@@ -41,7 +41,8 @@ const Navbar = () => {
         </div>
           <a
         
-          href="#contact"
+            href="#contact"
+
           className="hidden rounded-md bg-[#17C964] px-5 py-2.5 text-sm font-medium text-[#0B0D12] transition hover:bg-white md:block"
         >
           Let&rsquo;s Talk

@@ -1,4 +1,5 @@
 import { ArrowUpRight, Code2, Layout, Rocket } from "lucide-react";
+import ScrollReveal from "../components/ScrollReveal";
 
 const highlights = [
   {
@@ -38,20 +39,22 @@ const About = () => {
 
       <div className="relative mx-auto max-w-6xl">
         {/* Section header */}
-        <div className="mb-16 max-w-2xl">
-          <p className="mb-3 font-mono text-sm font-medium tracking-wide text-[#17C964]">
-            <span className="text-slate-500">{"//"}</span> about
-          </p>
+        <ScrollReveal delay={80}>
+          <div className="mb-16 max-w-2xl">
+            <p className="mb-3 font-mono text-sm font-medium tracking-wide text-[#17C964]">
+              <span className="text-slate-500">{"//"}</span> about
+            </p>
 
-          <h2 className="font-[Space_Grotesk,sans-serif] text-3xl font-bold tracking-tight text-white md:text-4xl">
-            Turning ideas into web experiences
-          </h2>
-        </div>
+            <h2 className="font-[Space_Grotesk,sans-serif] text-3xl font-bold tracking-tight text-white md:text-4xl">
+              Turning ideas into web experiences
+            </h2>
+          </div>
+        </ScrollReveal>
 
         {/* Bento grid */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-4 md:grid-rows-3">
           {/* Bio — large tile */}
-          <div className="relative rounded-2xl border border-white/10 bg-[#12141C] p-8 md:col-span-2 md:row-span-2">
+          <ScrollReveal delay={120} className="relative rounded-2xl border border-white/10 bg-[#12141C] p-8 md:col-span-2 md:row-span-2">
             <span
               className="font-mono text-sm text-[#17C964]"
               aria-hidden="true"
@@ -90,10 +93,13 @@ const About = () => {
             >
               {"*/"}
             </span>
-          </div>
+          </ScrollReveal>
 
           {/* Currently — status tile */}
-          <div className="rounded-2xl border border-white/10 bg-[#12141C] p-6 md:col-span-2">
+          <ScrollReveal
+            delay={150}
+            className="rounded-2xl border border-white/10 bg-[#12141C] p-6 md:col-span-2"
+          >
             <div className="flex items-center gap-2 font-mono text-xs text-slate-500">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#17C964] opacity-75" />
@@ -117,15 +123,16 @@ const About = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Highlight tiles */}
-          {highlights.map((item) => {
+          {highlights.map((item, index) => {
             const Icon = item.icon;
 
             return (
-              <div
+              <ScrollReveal
                 key={item.title}
+                delay={180 + index * 60}
                 className="group relative rounded-2xl border border-white/10 bg-[#12141C] p-6 transition hover:-translate-y-1 hover:border-[#17C964]/40"
               >
                 <span className="absolute right-5 top-5 rounded border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[11px] text-slate-500 transition group-hover:text-[#17C964]">
@@ -143,12 +150,12 @@ const About = () => {
                 <p className="mt-1 text-sm leading-6 text-slate-400">
                   {item.description}
                 </p>
-              </div>
+              </ScrollReveal>
             );
           })}
 
           {/* Growth — wide tile */}
-          <div className="group relative flex items-center gap-5 rounded-2xl border border-white/10 bg-[#12141C] p-6 transition hover:-translate-y-1 hover:border-[#17C964]/40 md:col-span-2">
+          <ScrollReveal delay={250} className="group relative flex items-center gap-5 rounded-2xl border border-white/10 bg-[#12141C] p-6 transition hover:-translate-y-1 hover:border-[#17C964]/40 md:col-span-2">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#17C964]/10 text-[#17C964]">
               <growth.icon size={20} />
             </div>
@@ -165,26 +172,28 @@ const About = () => {
                 {growth.description}
               </p>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* CTA tile */}
-        <a  
-            href="#contact"
-            className="group flex items-center justify-between rounded-2xl border border-[#17C964]/30 bg-[#17C964]/10 p-6 transition hover:bg-[#17C964]/15 md:col-span-2"
+          <ScrollReveal
+            delay={320}
+            className="group rounded-2xl border border-[#17C964]/30 bg-[#17C964]/10 p-6 transition hover:bg-[#17C964]/15 md:col-span-2"
           >
-            <div>
-              <p className="font-semibold text-white">
-                Have a project in mind?
-              </p>
-              <p className="mt-1 text-sm text-slate-400">
-                Let&rsquo;s talk about it.
-              </p>
-            </div>
+            <a href="#contact" className="flex w-full items-center justify-between">
+              <div>
+                <p className="font-semibold text-white">
+                  Have a project in mind?
+                </p>
+                <p className="mt-1 text-sm text-slate-400">
+                  Let&rsquo;s talk about it.
+                </p>
+              </div>
 
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#17C964] text-[#0B0D12] transition group-hover:translate-x-1 group-hover:-translate-y-1">
-              <ArrowUpRight size={18} />
-            </span>
-          </a>
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#17C964] text-[#0B0D12] transition group-hover:translate-x-1 group-hover:-translate-y-1">
+                <ArrowUpRight size={18} />
+              </span>
+            </a>
+          </ScrollReveal>
         </div>
       </div>
     </section>
