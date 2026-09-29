@@ -1,6 +1,9 @@
 import kaaryabImage from "../assets/kaaryab.png";
 import worldExplorerImage from "../assets/world-explorer.png";
 import movieWatchlistImage from "../assets/movie-watchlist.png";
+import productStoreImage from "../assets/product-store.png";
+import goalTrackerImage from "../assets/goal-track.PNG";
+import threadLineImage from "../assets/thread-line.png";
 import zamluxImage from "../assets/zamlux.png";
 import { ExternalLink, GitBranch } from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
@@ -46,8 +49,37 @@ const projects = [
     githubUrl: "https://github.com/zahra-moneeb/product-catalog",
     shape: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-lg rounded-br-lg",
   },
+  {
+    title: "Product Store",
+    image: productStoreImage,
+    description:
+      "A modern e-commerce application for browsing products, managing a shopping cart, and handling product data with modern React state management.",
+    technologies: ["React", "JavaScript", "Redux Toolkit", "React Query"],
+    liveUrl: "https://product-store-ashy-xi.vercel.app/",
+    githubUrl: "https://github.com/zahra-moneeb/product-store",
+    shape: "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg",
+  },
+  {
+    title: "Goal Tracker",
+    image: goalTrackerImage,
+    description:
+      "A simple and intuitive goal tracking application that helps users organize their goals and monitor their progress.",
+    technologies: ["React", "JavaScript", "LocalStorage"],
+    liveUrl: "https://goal-tracker-iota-vert.vercel.app/",
+    githubUrl: "https://github.com/zahra-moneeb/goal-tracker",
+    shape: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-lg rounded-br-lg",
+  },
+  {
+    title: "Thread Line",
+    image: threadLineImage,
+    description:
+      "A responsive web project with a clean and modern interface, built to showcase creative design and frontend development skills.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://zahra-moneeb.github.io/thread-line/",
+    githubUrl: "",
+    shape: "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg",
+  },
 ];
-
 const Projects = () => {
   return (
     <section
